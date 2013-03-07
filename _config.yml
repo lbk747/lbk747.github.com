@@ -10,11 +10,12 @@ pygments: true
 # so be sure to set them if your theme uses them.
 #
 title : 石佛的博客
-tagline: Site Tagline
+#tagline: Site Tagline
 author :
   name : 石佛
   email : lbk747@163.test
   github : lbk747
+  weibo : Buglee
  #twitter : username
  #feedburner : feedname
 

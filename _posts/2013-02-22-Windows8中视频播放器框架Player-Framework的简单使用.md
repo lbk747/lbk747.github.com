@@ -1,7 +1,6 @@
 --- 
 tags: 
 - Windows 8
-- Player Framework
 
 layout: post
 published: true

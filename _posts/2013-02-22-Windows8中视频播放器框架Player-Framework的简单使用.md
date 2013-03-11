@@ -18,63 +18,59 @@ status: publish
 
 <!--more-->
 
-1 下载[Player Framework for Windows 8 and WP8][1]扩展，并且安装。 ![QQ截图20130222095721.png][2]
+1 下载[Player Framework for Windows 8 and WP8][1]扩展，并且安装。 
 
-2 创建一个基于C#的空白应用 ![v1.png][3]
+![QQ截图20130222095721.png][2]
 
-3 添加Microsoft Player Framework的引用 ![v2.png][4] ![v3.png][5]
+2 创建一个基于C#的空白应用 
+
+![v1.png][3]
+
+3 添加Microsoft Player Framework的引用 
+
+![v2.png][4] ![v3.png][5]
 
 4 在xaml中添加PlayerFramework的命名空间
 
-`xmlns:mmppf="using:Microsoft.PlayerFramework"`
+	xmlns:mmppf="using:Microsoft.PlayerFramework"
 
 5 添加MediaPalyer控件，并指定Source
 
-`<Grid Background="{StaticResource ApplicationPageBackgroundThemeBrush}">
+	<Grid Background="{StaticResource ApplicationPageBackgroundThemeBrush}">
     <mmppf:MediaPlayer Source="http://smf.blob.core.windows.net/samples/videos/bigbuck.mp4"/>
-</Grid>`
+	</Grid>
 
-现在就可以开始运行了 ![v4.png][6]
+现在就可以开始运行了 
+
+![v4.png][6]
 
 # 添加流媒体支持
 
---- 
-tags: 
-- !binary |
-  5pyq5YiG57G7
-
-layout: post
-published: true
-type: post
-title: !binary |
-  dWJ1bnR1IHNlcnZlcuWuieijhW15c3Fs5pe26ZSZ6K+v5rGH5oC7
-
-meta: 
-  _edit_last: "1"
-status: publish
----
-
 1 安装[Microsoft Smooth Streaming Client SDK for Windows 8 ][7](单独下载).
 
-2 添加引用：Microsoft Player Framework，Microsoft Smooth Streaming Client SDK for Windows 8 ，Microsoft Visual C++ Runtime Package ，Microsoft Player Framework Adaptive Streaming Plugin ![v5.png][8]
+2 添加引用：Microsoft Player Framework，Microsoft Smooth Streaming Client SDK for Windows 8 ，Microsoft Visual C++ Runtime Package ，Microsoft Player Framework Adaptive Streaming Plugin 
+
+![v5.png][8]
 
 3 在xaml中添加命名空间
 
-`xmlns:mmppf="using:Microsoft.PlayerFramework" xmlns:adaptive="using:Microsoft.PlayerFramework.Adaptive"`
+	xmlns:mmppf="using:Microsoft.PlayerFramework" xmlns:adaptive="using:Microsoft.PlayerFramework.Adaptive"
 
 4 添加控件，并指定流媒体
 
-`<mmppf:MediaPlayer Source="http://mediadl.microsoft.com/mediadl/iisnet/smoothmedia/Experience/BigBuckBunny_720p.ism/Manifest">
-    <mmppf:MediaPlayer.Plugins>
-        <adaptive:AdaptivePlugin />
-    </mmppf:MediaPlayer.Plugins>
-</mmppf:MediaPlayer>`
+	<mmppf:MediaPlayer Source="http://mediadl.microsoft.com/mediadl/iisnet/smoothmedia/Experience/BigBuckBunny_720p.ism/Manifest">
+	    <mmppf:MediaPlayer.Plugins>
+	        <adaptive:AdaptivePlugin />
+	    </mmppf:MediaPlayer.Plugins>
+	</mmppf:MediaPlayer>
 
 5 再被指管理器中指定应用平台为 x86，x64或者ARM，这是由于IIS流媒体客户端写在非托管的代码中，AnyCPU是不会工作的，所以需要为每一个平台分别编译
 
 ![v6.png][9]
 
-现在就可以开始运行了 ![v7.png][10]
+现在就可以开始运行了 
+
+![v7.png][10]
 
 更多用法可以参考：http://playerframework.codeplex.com/
 

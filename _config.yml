@@ -83,7 +83,7 @@ JB :
   #
   comments :
     #provider : disqus
-    provider : custom
+    provider : intensedebate
     disqus :
       short_name : jekyllbootstrap
     livefyre :

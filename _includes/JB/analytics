@@ -1,5 +1,1 @@
-{% if site.safe and site.JB.analytics.provider and page.JB.analytics != false %}
-
 11
-
-{% endif %}
